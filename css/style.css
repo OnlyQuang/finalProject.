@@ -1,0 +1,99 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    margin-top: 20px;
+}
+
+img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+}
+
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* === Base Mobile Grid Layout === */
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* One column */
+    gap: 10px; /* Row and column spacing */
+    padding: 10px;
+}
+
+figure {
+    background-color: #eee;
+    color: #000;
+    border: 2px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 1rem;
+}
+
+
+@media screen and (min-width: 772px) {
+    main {
+        grid-template-columns: 1fr 1fr; /* Two columns */
+    }
+
+    img {
+        border-radius: 50%; /* Circular images */
+    }
+
+    figure:last-child {
+        grid-column: span 2; /* Last one spans both columns */
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    img {
+        border-radius: 0; /* Remove border radius */
+    }
+
+    figure:nth-of-type(3n) {
+        grid-column: span 2; /* Every 3rd spans 2 columns */
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Remove animation */
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #222;
+        color: #f0e68c;         /* Light yellow-ish text */
+        border-color: #000;     /* Black border */
+    }
+}
